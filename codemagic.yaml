@@ -5,8 +5,8 @@ workflows:
       - name: Prepare
         script: pwd # current working directory is /Users/builder/clone/platforms/ios/
       - name: Build
-         script: xcode-project build-ipa --scheme iOS
-         
+        script: xcode-project build-ipa --scheme iOS
+        
       #- name: Add provisioning profiles
       #  script: |
       #    set -e # exit on first failed command
