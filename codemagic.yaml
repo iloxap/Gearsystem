@@ -1,7 +1,6 @@
 workflows:
   environment:
     vars:
-      BUNDLE_ID: "io.gearsystem.3-4-1.iosnative"
       XCODE_WORKSPACE: "project.xcworkspace" # <-- Name of your Xcode workspace
       XCODE_SCHEME: "Gearsystem.xcscheme" # <-- Name of your Xcode scheme
   my-workflow:
