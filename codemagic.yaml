@@ -7,10 +7,9 @@ workflows:
       - name: Prepare Dependencies 2
         script: mkdir build
       - name: Prepare Dependencies 3
-        working_directory: platforms/ios/dependencies/SDL-2.0.4-9174/build/
-        script: pwd
+        script: ./autogen.sh
       - name: Build Dependencies 4
-        script: CC=/Users/builder/clone/platforms/ios/dependencies/SDL-2.0.4-9174/build-scripts/gcc-fat.sh ../configure
+        script: ./configure
       - name: Prepare Dependencies 5
         script: make
       - name: Prepare Build
