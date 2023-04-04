@@ -1,6 +1,10 @@
 workflows:
   my-workflow:
+    working_directory: platforms/ios/
     scripts:
+      - name: Prepare
+        script: pwd # current working directory is /Users/builder/clone/platforms/ios/
+    
       #- name: Add provisioning profiles
       #  script: |
       #    set -e # exit on first failed command
@@ -25,6 +29,6 @@ workflows:
       #  script: xcode-project build-ipa \
       #              --workspace "${XCODE_WORKSPACE?}" \
       #              --scheme "${XCODE_SCHEME?}"
-         script: xcodebuild -list -project -scheme iOS platforms/ios/Gearsystem.xcodeproj
+         script: xcode-project build-ipa --scheme iOS
     artifacts:
-      - platforms/ios/*.ipa
+      - build/ios/*.ipa
