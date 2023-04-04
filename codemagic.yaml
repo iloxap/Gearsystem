@@ -2,8 +2,6 @@ workflows:
   my-workflow:
     working_directory: platforms/ios/
     scripts:
-      - name: Dependencies
-        script: sudo apt-get install libsdl2-dev
       - name: Prepare
         script: pwd # current working directory is /Users/builder/clone/platforms/ios/
       - name: Build
