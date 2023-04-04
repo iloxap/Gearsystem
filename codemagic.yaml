@@ -2,12 +2,16 @@ workflows:
   my-workflow:
     working_directory: platforms/ios/dependencies/SDL-2.0.4-9174/
     scripts:
-      - name: Prepare Dependencies
-        script: pwd # current working directory is /Users/builder/clone/platforms/ios/dependencies/SDL-2.0.4-9174/build-scripts/
-      - name: Prepare Dependencies Build
-        script: mkdir build # current working directory is /Users/builder/clone/platforms/ios/dependencies/SDL-2.0.4-9174/build-scripts/
-      - name: Build Dependencies
-        script: sh ./build-scripts/iosbuild.sh
+      - name: Prepare Dependencies 1
+        script: pwd
+      - name: Prepare Dependencies 2
+        script: mkdir build
+      - name: Prepare Dependencies 3
+        script: cd build
+        - name: Build Dependencies 4
+        script: CC=/Users/builder/clone/platforms/ios/dependencies/SDL-2.0.4-9174/build-scripts/gcc-fat.sh ../configure
+      - name: Prepare Dependencies 5
+        script: make
       - name: Prepare Build
         working_directory: platforms/ios/
         script: pwd # current working directory is /Users/builder/clone/platforms/ios/
