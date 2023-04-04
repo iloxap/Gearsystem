@@ -1,11 +1,11 @@
 workflows:
   my-workflow:
-    working_directory: platforms/ios/dependencies/SDL-2.0.4-9174/
+    working_directory: platforms/ios/dependencies/SDL-2.0.4-9174/build-scripts/
     scripts:
       - name: Prepare Dependencies
-        script: pwd # current working directory is /Users/builder/clone/platforms/ios/dependencies/SDL-2.0.4-9174/
+        script: pwd # current working directory is /Users/builder/clone/platforms/ios/dependencies/SDL-2.0.4-9174/build-scripts/
       - name: Dependencies
-        script: make
+        script: sh ./iosbuild.sh
       - name: Prepare Build
         working_directory: platforms/ios/
         script: pwd # current working directory is /Users/builder/clone/platforms/ios/
