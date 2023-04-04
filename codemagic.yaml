@@ -5,9 +5,7 @@ workflows:
       - name: Prepare
         script: pwd # current working directory is /Users/builder/clone/platforms/ios/
       - name: Build
-        script: xcode-project build-ipa \
-                    --workspace "Gearsystem.xcworkspace" \
-                    --scheme iOS
+        script: xcode-project build-ipa --project "Gearsystem.xcodeproj" --scheme "Gearsystem"
         
       #- name: Add provisioning profiles
       #  script: |
