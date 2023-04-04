@@ -1,8 +1,13 @@
 workflows:
   my-workflow:
-    working_directory: platforms/ios/
+    working_directory: platforms/ios/dependencies/SDL-2.0.4-9174/
     scripts:
-      - name: Prepare
+      - name: Prepare Dependencies
+        script: pwd # current working directory is /Users/builder/clone/platforms/ios/dependencies/SDL-2.0.4-9174/
+      - name: Dependencies
+        script: make
+      - name: Prepare Build
+        working_directory: platforms/ios/
         script: pwd # current working directory is /Users/builder/clone/platforms/ios/
       - name: Build
         script: xcodebuild -project "Gearsystem.xcodeproj" -target "Gearsystem" -configuration Release CODE_SIGNING_ALLOWED=NO
